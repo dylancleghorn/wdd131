@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 131 — Dynamic Web Fundamentals — Dylan Cleghorn</title>
+  <meta name="description"
+    content="WDD 131 — Dynamic Web Fundamentals | Dylan Cleghorn | Course home page with links, profile, and resources.">
+  <meta name="author" content="Dylan Cleghorn">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+
+  <script defer src="scripts/getdates.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <span id="course-title">WDD 131 — Dynamic Web Fundamentals — Dylan Cleghorn</span>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&amp;id=p7#p7" target="_blank"
+        rel="noopener">Scripture</a>
+      <a href="./final-project/">Final Project</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1 class="student-name">Dylan Cleghorn</h1>
+
+    <section class="card about">
+      <h2>About Me</h2>
+
+      <p>
+        My name is Dylan.
+        I currently work as an Advisory Consultant for a software company called Archer Technologies.
+        In my free time, I like to write and perform music, play golf, and travel.
+      </p>
+
+      <img src="images/profile.jpg" alt="Dylan Profile Image" width="10" loading="lazy">
+
+      <p>
+        I am from the great state of Texas.
+      </p>
+
+      <img src="images/texas.png" alt="Image of Texas Flag" width="10" loading="lazy">
+    </section>
+
+    <section class="card resources">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+        <li><a href="https://web.dev/learn/" target="_blank" rel="noopener">web.dev/learn</a></li>
+        <li><a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">HTML Validator</a></li>
+        <li><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Lighthouse (PageSpeed)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> Dylan Cleghorn | Texas, USA</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+
+</html>

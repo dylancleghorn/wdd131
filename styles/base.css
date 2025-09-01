@@ -1,0 +1,173 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --brand: #38bdf8;
+  --brand-strong: #0ea5e9;
+  --maxw: 960px;
+  --radius: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: "Inter", Segoe UI, Roboto, Arial;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  display: grid;
+  gap: 0.5rem;
+  align-content: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: var(--bg);
+}
+
+#course-title {
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 1.35rem;
+}
+
+/* Navigation */
+.primary-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.primary-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+/* Hover effect */
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: var(--brand);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Main Layout */
+#content {
+  max-width: var(--maxw);
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.student-name {
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  margin: 0.5rem 0 0.25rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--bg);
+  grid-column: 1 / -1;
+}
+
+a {
+  color: var(--brand);
+}
+
+/* Cards Grid */
+#content {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  #content {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  grid-column: 1 / -1;
+}
+
+.card picture,
+.card img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 12px;
+  display: block;
+}
+
+section.card.resources {
+  display: table-row;
+}
+
+.card ul {
+  margin: 1rem 0;
+  padding-left: 1.1rem;
+}
+
+/* Two-column layout for larger screens */
+@media (min-width: 860px) {
+  #content {
+    grid-template-columns: 60% 40%;
+  }
+
+  .about,
+  .resources {
+    grid-template-columns: 1fr 150px;
+    align-items: start;
+  }
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 2rem;
+  display: grid;
+  gap: .35rem;
+  text-align: center;
+  color: var(--muted);
+  margin-top: 3rem;
+}
+
+.site-footer a {
+  color: var(--brand);
+}
+
+.site-footer p {
+  margin: 0;
+}
