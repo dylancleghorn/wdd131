@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BOM Top 10 — Favorite Book of Mormon Chapters</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles/base.css" />
+</head>
+
+<body>
+    <main class="card">
+        <h1 id="app-title">BOM Top 10</h1>
+
+        <form id="chapter-form" autocomplete="off">
+            <p id="helper" class="helper">Add your favorite Book of Mormon chapters to the list.</p>
+            <label for="chapter-input" class="visually-hidden">Favorite chapter</label>
+            <input id="chapter-input" type="text" name="chapter" placeholder="e.g., 1 Nephi 1" required />
+            <button id="add-button" type="button">Add Chapter</button>
+        </form>
+
+        <ul id="chapter-list" class="list">
+        </ul>
+    </main>
+
+    <script src="./scripts/app.js" defer></script>
+</body>
+
+</html>
