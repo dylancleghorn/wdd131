@@ -52,11 +52,8 @@ body {
 /* ---------------- Hero & Image ---------------- */
 .hero {
     position: relative;
-    /* anchor for overlay on large screens */
     margin-bottom: .5rem;
-    /* tight gap under hero */
     min-height: 0;
-    /* mobile: image defines height */
 }
 
 .hero picture img {
@@ -64,12 +61,9 @@ body {
     width: 100%;
     height: auto;
     object-fit: contain;
-    /* no cropping on small screens */
     aspect-ratio: auto;
-    /* avoid extra computed space */
     position: relative;
     z-index: 1;
-    /* keep behind overlay panels */
 }
 
 /* ---------------- Overlay / Panels (mobile default = stacked) ---------------- */
@@ -97,7 +91,6 @@ body {
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    /* decorative ring thickness */
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -255,16 +248,13 @@ a:hover {
         height: 80vh;
         width: 100%;
         object-fit: cover;
-        /* tasteful crop on large screens */
     }
 
     .overlay {
         position: absolute;
         inset: 0;
         display: block;
-        /* canvas for absolutely placed children */
         pointer-events: none;
-        /* panels re-enable their own */
         padding: 0;
         z-index: 2;
     }
@@ -300,6 +290,5 @@ a:hover {
     .weather-icon-small {
         display: none;
     }
-
 
 }
