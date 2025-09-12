@@ -409,6 +409,19 @@ a:hover {
         grid-template-columns: 1fr 1fr;
         gap: .35rem .5rem;
     }
+
+    .weather-icon-small {
+        font-size: 4rem;
+        margin: -1.5rem 0 -3rem;
+    }
+
+    .weather-icon-large {
+        display: none;
+    }
+
+    .panel {
+        padding: 1rem 2.5rem;
+    }
 }
 
 /* ===== weather: hero badge numbers + pills ===== */
@@ -425,10 +438,6 @@ a:hover {
     margin-bottom: .3rem;
 }
 
-.weather-icon {
-    font-size: 4rem;
-    margin: -1.5rem 0 -1rem;
-}
 
 /* “chip” look for the condition line */
 .weather p strong {
@@ -614,6 +623,15 @@ a:hover {
         right: clamp(16px, 3vw, 40px);
         bottom: clamp(16px, 3vh, 40px);
         width: min(360px, 40vw);
+    }
+
+    .weather-icon-large {
+        font-size: 2em;
+        margin: -1.5rem 0 -1rem;
+    }
+
+    .weather-icon-small {
+        display: none;
     }
 
 }
