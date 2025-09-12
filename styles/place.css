@@ -91,8 +91,6 @@ body {
     margin-top: 0
 }
 
-
-
 .block dt {
     color: var(--muted);
     font-weight: 600;
@@ -103,15 +101,11 @@ body {
 
 }
 
-
-
 .weather-heading {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
-
-
 
 .note {
     color: var(--muted);
@@ -167,11 +161,6 @@ body {
         gap: .5rem .75rem;
         margin: .5rem 0 0;
     }
-
-    /* Pseudo-element emoticon for wider view */
-
-
-    /* Hide inline SVG icon on large screens (pseudo handles it) */
 
 }
 
@@ -410,7 +399,6 @@ a:hover {
     transform: translateY(-50%);
     background: radial-gradient(circle at 30% 30%, var(--yellow), var(--green));
 }
-
 
 
 /* tighten gaps on mobile data chips */
