@@ -625,9 +625,10 @@ a:hover {
         width: min(360px, 40vw);
     }
 
-    .weather-icon-large {
-        font-size: 2em;
+    #weather-title::after {
+        content: ' ⛅';
         margin: -1.5rem 0 -1rem;
+        color: black !important;
     }
 
     .weather-icon-small {
@@ -640,4 +641,5 @@ a:hover {
 .hero picture img {
     position: relative;
     z-index: 1;
+
 }
