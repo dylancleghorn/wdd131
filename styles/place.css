@@ -1,0 +1,637 @@
+:root {
+    /* Brazil palette */
+    --green: #009b3a;
+    --yellow: #ffdf00;
+    --blue: #002776;
+    --ink: #0f172a;
+    --bg: #f8fafc;
+
+    --card: #ffffff;
+    --muted: #444444;
+    --radius: 14px;
+    --shadow: 0 6px 22px rgba(0, 0, 0, .12);
+    --maxw: 1100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+.site-header {
+    padding: 1rem 0;
+    border-bottom: 4px solid var(--green);
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--yellow));
+    color: #fff;
+}
+
+.site-header h1 {
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+.hero {
+    position: relative;
+    min-height: 55vh;
+    /* ensures visible 'full screen' feel on mobile; image scales */
+}
+
+.hero picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+/* Overlay panels shown only on large screens */
+.overlay {
+    display: none;
+}
+
+.panel {
+
+    pointer-events: auto;
+    border-radius: var(--radius);
+    border: 1px solid rgba(0, 0, 0, .06);
+
+    padding: 1rem 1.1rem;
+    margin: 1rem;
+}
+
+/* Blocks (mobile / default) */
+.blocks {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0 2rem;
+}
+
+.block {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.1rem;
+}
+
+.block h2 {
+    margin-top: 0
+}
+
+
+
+.block dt {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.block dd {
+    margin: 0;
+
+}
+
+
+
+.weather-heading {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+
+.note {
+    color: var(--muted);
+    font-size: .9rem
+}
+
+/* Larger layout: overlay Data + Weather on the hero */
+@media (min-width: 900px) {
+    .hero {
+        min-height: 80vh
+    }
+
+    .hero picture img {
+        height: 80vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .blocks {
+        display: none
+    }
+
+    /* hide stacked blocks */
+    .overlay {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+        position: absolute;
+        inset: auto 0 4% 0;
+        /* sit near bottom over the image */
+    }
+
+    .panel {
+        position: absolute;
+        pointer-events: auto;
+        background: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .92));
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: var(--radius);
+        border: 1px solid rgba(0, 0, 0, .06);
+        box-shadow: var(--shadow);
+        padding: 1rem 1.1rem;
+        max-width: min(520px, 48vw);
+    }
+
+    .panel h2 {
+        margin-top: 0
+    }
+
+    .panel.data dl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem .75rem;
+        margin: .5rem 0 0;
+    }
+
+    /* Pseudo-element emoticon for wider view */
+
+
+    /* Hide inline SVG icon on large screens (pseudo handles it) */
+
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem 0 2rem;
+    color: var(--muted);
+}
+
+/* Focus & links */
+a {
+    color: var(--blue)
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px
+}
+
+/* --- Tighten spacing on small/medium --- */
+.hero {
+    /* keep full-screen feel without adding extra space below */
+    margin-bottom: .5rem;
+    /* was larger by default due to section spacing */
+}
+
+.blocks {
+    padding: .5rem 0 1rem;
+    /* reduce gap below hero */
+}
+
+.block h2 {
+    margin-top: .25rem;
+}
+
+/* tiny tighten */
+.block {
+    padding: .9rem 1rem;
+}
+
+/* slightly denser cards */
+
+/* --- Large screens: precise overlay placement --- */
+@media (min-width: 900px) {
+
+    /* keep the image tall, but don’t add extra whitespace below */
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero picture img {
+        height: 80vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* hide stacked blocks; use overlays instead */
+    .blocks {
+        display: none;
+    }
+
+    /* make overlay a positioning canvas */
+    .overlay {
+        display: block;
+        /* was grid */
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        /* panels re-enable */
+    }
+
+    /* base panel look (unchanged style) */
+    .panel {
+        position: absolute;
+        pointer-events: auto;
+        background: rgba(255, 255, 255, .94);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        border-radius: var(--radius);
+        border: 1px solid rgba(0, 0, 0, .06);
+        box-shadow: var(--shadow);
+        padding: 1rem 1.1rem;
+    }
+
+    /* Upper-left: Data */
+    .panel.data {
+        top: clamp(16px, 3vh, 40px);
+        left: clamp(16px, 3vw, 40px);
+        max-width: min(520px, 48vw);
+    }
+
+    .panel.data dl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem .75rem;
+        margin: .5rem 0 0;
+    }
+
+    /* Lower-right: Weather */
+    .panel.weather {
+        right: clamp(16px, 3vw, 40px);
+        bottom: clamp(16px, 3vh, 40px);
+        width: min(360px, 40vw);
+    }
+}
+
+/* --- Fix mobile gap under hero --- */
+@media (max-width: 899px) {
+    .hero {
+        min-height: 0 !important;
+        /* remove enforced height */
+        margin-bottom: .25rem;
+        /* tiny, consistent gap */
+    }
+
+    .hero picture img {
+        height: auto !important;
+        /* let image define height */
+        aspect-ratio: auto !important;
+        /* avoid extra computed space */
+        object-fit: contain !important;
+        /* no cropping on small screens */
+        display: block;
+        /* no baseline gap */
+    }
+
+    .blocks {
+        padding-top: .5rem;
+        /* keep content snug to hero */
+        padding-bottom: 1rem;
+    }
+}
+
+/* --- Large screens keep the overlayed, full-screen feel --- */
+@media (min-width: 900px) {
+    .hero {
+        min-height: 80vh;
+        /* only apply on large */
+    }
+
+    .hero picture img {
+        height: 80vh;
+        /* image fills hero */
+        width: 100%;
+        object-fit: cover;
+        /* nice crop */
+    }
+}
+
+/* ===== snazzier panels (no HTML changes) ===== */
+
+/* shared panel glow + subtle gradient */
+.panel,
+.block {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(255, 255, 255, .94));
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .6);
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+
+/* fancy border with Brazil colors using a pseudo-element ring */
+.panel::before,
+.block::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    /* ring thickness */
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    border-radius: var(--radius);
+}
+
+/* header styling */
+.panel h2,
+.block h2 {
+    display: inline-block;
+    margin-bottom: .4rem;
+    font-weight: 800;
+    letter-spacing: .2px;
+    background: var(--blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== data list: label:value chips, zebra stripes ===== */
+.panel.data dl,
+.block.data dl {
+    --chip-bg: #ffffff;
+    --chip-border: #e5e7eb;
+    --chip-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+/* layout stays two columns from your base CSS */
+.panel.data dt,
+.block.data dt {
+    color: var(--muted);
+    position: relative;
+    padding: .35rem .4rem .35rem 1.1rem;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.panel.data dd,
+.block.data dd {
+    margin: 0;
+    padding: .35rem .55rem;
+    background: var(--chip-bg);
+    border: 1px solid var(--chip-border);
+    border-radius: 10px;
+    box-shadow: var(--chip-shadow);
+}
+
+/* small dot marker before labels */
+.panel.data dt::before,
+.block.data dt::before {
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    border-radius: 999px;
+    position: absolute;
+    left: .4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at 30% 30%, var(--yellow), var(--green));
+}
+
+
+
+/* tighten gaps on mobile data chips */
+@media (max-width: 599px) {
+
+    .panel.data dl,
+    .block.data dl {
+        grid-template-columns: 1fr 1fr;
+        gap: .35rem .5rem;
+    }
+}
+
+/* ===== weather: hero badge numbers + pills ===== */
+.panel.weather,
+.block.weather {
+    --pill-bg: rgba(0, 0, 0, .04);
+    --pill-border: rgba(0, 0, 0, .08);
+}
+
+/* weather heading row */
+.weather .weather-heading {
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .3rem;
+}
+
+.weather-icon {
+    font-size: 4rem;
+    margin: -1.5rem 0 -1rem;
+}
+
+/* “chip” look for the condition line */
+.weather p strong {
+    font-weight: 800;
+}
+
+/* temperature badge (targets the span only) */
+#temp-display,
+#temp-display-2 {
+    display: inline-block;
+    min-width: 3ch;
+    font-weight: 900;
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    line-height: 1;
+    padding: .35rem .5rem;
+    margin-inline: .15rem;
+    color: #0b1220;
+    background: linear-gradient(180deg, #fff, #f3f4f6);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .07);
+}
+
+/* wind chip */
+#wind-display,
+#wind-display-2 {
+    display: inline-block;
+    padding: .25rem .5rem;
+    margin-left: .2rem;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    border-radius: 12px;
+}
+
+/* windchill badge */
+#windchill,
+#windchill-2 {
+    display: inline-block;
+    padding: .3rem .5rem;
+    margin-left: .2rem;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(63, 184, 255, .18), rgba(0, 39, 118, .14));
+    border: 1px solid rgba(0, 39, 118, .18);
+    font-weight: 700;
+}
+
+/* subtle separators for weather rows */
+.block.weather p+p,
+.panel.weather p+p {
+    border-top: 1px dashed #e5e7eb;
+    margin-top: .5rem;
+    padding-top: .5rem;
+}
+
+/* ===== overlay placement remains (from your previous step) ===== */
+@media (min-width: 900px) {
+    .panel {
+        background: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .92));
+    }
+}
+
+/* === FIX: keep panels absolutely positioned over the hero on large screens === */
+@media (min-width: 900px) {
+    .hero {
+        position: relative;
+    }
+
+    /* anchor for absolute children */
+    .overlay {
+        position: absolute;
+        inset: 0;
+        display: block;
+        pointer-events: none;
+        /* panels re-enable clicks */
+        z-index: 2;
+    }
+
+    /* override the earlier "position: relative" from snazzy styles */
+    .overlay .panel {
+        position: absolute !important;
+        pointer-events: auto;
+        z-index: 3;
+        /* ensure above the image */
+    }
+
+    /* keep exact placements */
+    .overlay .panel.data {
+        top: clamp(16px, 3vh, 40px);
+        left: clamp(16px, 3vw, 40px);
+        max-width: min(520px, 48vw);
+    }
+
+    .overlay .panel.weather {
+        right: clamp(16px, 3vw, 40px);
+        bottom: clamp(16px, 3vh, 40px);
+        width: min(360px, 40vw);
+    }
+
+}
+
+/* Optional: ensure the hero image stays behind the panels */
+.hero picture img {
+    z-index: 1;
+    position: relative;
+}
+
+/* ---- Single-instance layout rules ---- */
+
+/* Mobile & medium: cards appear BELOW the image (normal flow) */
+.overlay {
+    position: static;
+    /* not overlaying */
+    display: grid;
+
+    padding: .75rem 0 1.25rem;
+}
+
+.panel {
+    position: static;
+}
+
+/* Tight gap under hero image on small/medium */
+@media (max-width: 899px) {
+    .hero {
+        min-height: 0 !important;
+        margin-bottom: .25rem;
+    }
+
+    .hero picture img {
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        display: block;
+    }
+}
+
+/* Large: overlay the SAME panels on top of the image */
+@media (min-width: 900px) {
+    .hero {
+        position: relative;
+        min-height: 80vh;
+    }
+
+    .hero picture img {
+        height: 80vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* turn the same container into an overlay canvas */
+    .overlay {
+        position: absolute;
+        inset: 0;
+        display: block;
+        /* from grid → block so we can absolutely place children */
+        pointer-events: none;
+        z-index: 2;
+        padding: 0;
+        /* no extra space when overlaying */
+    }
+
+    .overlay .panel {
+        position: absolute;
+        pointer-events: auto;
+        background: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .92));
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: var(--radius);
+        border: 1px solid rgba(0, 0, 0, .06);
+        box-shadow: var(--shadow);
+        padding: 1rem 1.1rem;
+        max-width: min(520px, 48vw);
+    }
+
+    /* Upper-left Data */
+    .overlay .panel.data {
+        top: clamp(16px, 3vh, 40px);
+        left: clamp(16px, 3vw, 40px);
+    }
+
+    /* Lower-right Weather */
+    .overlay .panel.weather {
+        right: clamp(16px, 3vw, 40px);
+        bottom: clamp(16px, 3vh, 40px);
+        width: min(360px, 40vw);
+    }
+
+}
+
+/* Ensure image stays behind panels */
+.hero picture img {
+    position: relative;
+    z-index: 1;
+}
