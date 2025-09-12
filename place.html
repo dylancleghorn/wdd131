@@ -7,7 +7,11 @@
     <meta name="description" content="Brazil country page with responsive hero, data, and weather overlay.">
     <meta name="author" content="Dylan Cleghorn">
     <title>Brazil — Country Page</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/place.css">
     <script src="scripts/place.js" defer></script>
 </head>
@@ -17,54 +21,54 @@
     <header class="site-header">
         <h1>Brazil</h1>
     </header>
+    <main>
+        <section class="hero" aria-label="Brazil hero image">
+            <picture>
+                <!-- Small -->
+                <source srcset="images/hero-brazil-small.webp" media="(max-width: 600px)" type="image/webp">
+                <!-- Medium -->
+                <source srcset="images/hero-brazil-medium.webp" media="(max-width: 1200px)" type="image/webp">
+                <!-- Large default -->
+                <img src="images/hero-brazil-large.webp"
+                    alt="Aerial view of Rio de Janeiro with Sugarloaf Mountain and the bay" width="1920" height="1080"
+                    loading="eager">
+            </picture>
 
-    <section class="hero" aria-label="Brazil hero image">
-        <picture>
-            <!-- Small -->
-            <source srcset="images/hero-brazil-small.webp" media="(max-width: 600px)" type="image/webp">
-            <!-- Medium -->
-            <source srcset="images/hero-brazil-medium.webp" media="(max-width: 1200px)" type="image/webp">
-            <!-- Large default -->
-            <img src="images/hero-brazil-large.webp"
-                alt="Aerial view of Rio de Janeiro with Sugarloaf Mountain and the bay" width="1920" height="1080"
-                loading="eager">
-        </picture>
+            <!-- Single instance: used for all viewports -->
+            <div class="overlay wrapper">
+                <section class="panel data">
+                    <h2>Data</h2>
+                    <dl>
+                        <dt>Capital</dt>
+                        <dd>Brasília</dd>
+                        <dt>Language</dt>
+                        <dd>Portuguese</dd>
+                        <dt>Population</dt>
+                        <dd>~203 million</dd>
+                        <dt>Currency</dt>
+                        <dd>Brazilian real (BRL)</dd>
+                        <dt>Region</dt>
+                        <dd>South America</dd>
+                        <dt>Calling Code</dt>
+                        <dd>+55</dd>
+                        <dt>Time Zones</dt>
+                        <dd>BRT, AMT, FNT, etc.</dd>
+                    </dl>
+                </section>
 
-        <!-- Single instance: used for all viewports -->
-        <div class="overlay wrapper">
-            <section class="panel data">
-                <h2>Data</h2>
-                <dl>
-                    <dt>Capital</dt>
-                    <dd>Brasília</dd>
-                    <dt>Language</dt>
-                    <dd>Portuguese</dd>
-                    <dt>Population</dt>
-                    <dd>~203 million</dd>
-                    <dt>Currency</dt>
-                    <dd>Brazilian real (BRL)</dd>
-                    <dt>Region</dt>
-                    <dd>South America</dd>
-                    <dt>Calling Code</dt>
-                    <dd>+55</dd>
-                    <dt>Time Zones</dt>
-                    <dd>BRT, AMT, FNT, etc.</dd>
-                </dl>
-            </section>
-
-            <section class="panel weather">
-                <div class="weather-heading">
-                    <h2 id="weather-title">Weather</h2>
-                </div>
-                <div class="weather-icon">⛅</div>
-                <p><strong>Location:</strong> São Paulo</p>
-                <p><strong>Conditions:</strong> Partly Cloudy</p>
-                <p><strong>Temperature:</strong> <span id="temp-display">0 °C</span></p>
-                <p><strong>Wind:</strong> <span id="wind-display">0 km/h</span></p>
-                <p><strong>Wind Chill:</strong> <span id="windchill">N/A</span></p>
-            </section>
-        </div>
-    </section>
+                <section class="panel weather">
+                    <div class="weather-heading">
+                        <h2 id="weather-title">Weather</h2>
+                    </div>
+                    <div class="weather-icon">⛅</div>
+                    <p><strong>Location:</strong> São Paulo</p>
+                    <p><strong>Conditions:</strong> Partly Cloudy</p>
+                    <p><strong>Temperature:</strong> <span id="temp-display">0 °C</span></p>
+                    <p><strong>Wind:</strong> <span id="wind-display">0 km/h</span></p>
+                    <p><strong>Wind Chill:</strong> <span id="windchill">N/A</span></p>
+                </section>
+            </div>
+        </section>
 
     </main>
 
