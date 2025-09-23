@@ -95,6 +95,10 @@ const temples = [
   }
 ];
 
+/* --------------------------------------------------------------------------
+  HELPERS
+-------------------------------------------------------------------------- */
+
 /** Get the 4-digit year */
 function getYearFromDedicated(dateString) {
   if (!dateString) return NaN;
@@ -223,7 +227,7 @@ function renderCards(templeList) {
 }
 
 /* --------------------------------------------------------------------------
-  NAV (MOBILE HAMBURGER)
+  NAV
 -------------------------------------------------------------------------- */
 
 (function setupHamburgerMenu() {
