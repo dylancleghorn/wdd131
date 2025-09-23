@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A photo album of Latter-day Saint temples.">
+    <meta name="author" content="Dylan Cleghorn">
+    <title>Temple Album</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+
+    <script defer src="scripts/filtered-temples.js"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand-row">
+
+            <h1 class="site-title">Temple Album</h1>
+
+            <button id="menu-toggle" class="hamburger" aria-label="Menu" aria-controls="primary-nav"
+                aria-expanded="false">
+                ☰
+            </button>
+        </div>
+
+        <nav id="primary-nav" class="primary-nav">
+            <ul>
+                <li><a href="#" class="nav-link is-current" data-filter="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-filter="old">Old</a></li>
+                <li><a href="#" class="nav-link" data-filter="new">New</a></li>
+                <li><a href="#" class="nav-link" data-filter="large">Large</a></li>
+                <li><a href="#" class="nav-link" data-filter="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="header-wave" aria-hidden="true"></div>
+
+    <main>
+        <h2 class="page-heading">Home</h2>
+
+        <section class="gallery" aria-label="Temple image gallery">
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> | Dylan Cleghorn | Texas, USA</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+
+</html>
