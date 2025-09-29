@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review Submitted</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Thanks for your review!</h1>
+      <p class="subtitle">Your submission was received.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Submission Summary</h2>
+      <dl class="deflist" id="summaryList">
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>Your Review Streak</h2>
+      <p>You have submitted <strong id="reviewCount">0</strong> review(s) on this device.</p>
+      <a class="btn" href="form.html">Submit another review</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>W05 • Product Review • Dylan Cleghorn</p>
+    </div>
+  </footer>
+
+  <script src="scripts/review.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review Form</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Product Review</h1>
+      <p class="subtitle">Share your experience to help others.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="reviewForm" action="review.html" method="get" novalidate>
+      <div class="form-row">
+        <label for="product">Product Name <span aria-hidden="true" class="req">*</span></label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </div>
+
+      <fieldset class="form-row">
+        <legend>Overall Rating <span aria-hidden="true" class="req">*</span></legend>
+        <div class="star-rating" role="radiogroup" aria-label="Overall rating from 1 to 5">
+          <input type="radio" name="rating" id="star-a" value="5" required />
+          <label for="star-a" title="5 stars"></label>
+
+          <input type="radio" name="rating" id="star-b" value="4" />
+          <label for="star-b" title="4 stars"></label>
+
+          <input type="radio" name="rating" id="star-c" value="3" />
+          <label for="star-c" title="3 stars"></label>
+
+          <input type="radio" name="rating" id="star-d" value="2" />
+          <label for="star-d" title="2 stars"></label>
+
+          <input type="radio" name="rating" id="star-e" value="1" />
+          <label for="star-e" title="1 star"></label>
+        </div>
+        <small class="hint">Click a star to select your rating.</small>
+      </fieldset>
+
+      <div class="form-row">
+        <label for="installed">Date of Installation <span aria-hidden="true" class="req">*</span></label>
+        <input type="date" id="installed" name="installed" required />
+      </div>
+
+      <fieldset class="form-row">
+        <legend>Useful Features (check all that apply)</legend>
+        <div class="checkbox-grid">
+          <div class="checkbox">
+            <input type="checkbox" id="feat_easy_install" name="features" value="easy_install">
+            <label for="feat_easy_install">Easy installation</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="feat_durable" name="features" value="durable">
+            <label for="feat_durable">Durable build</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="feat_value" name="features" value="good_value">
+            <label for="feat_value">Good value</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="feat_performance" name="features" value="high_performance">
+            <label for="feat_performance">High performance</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="feat_support" name="features" value="support_docs">
+            <label for="feat_support">Great support/docs</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-row">
+        <label for="review">Written Review</label>
+        <textarea id="review" name="review" rows="5"
+          placeholder="What did you like or wish were better? (optional)"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="username">Your Name</label>
+        <input type="text" id="username" name="username" placeholder="Optional" />
+      </div>
+
+      <div class="form-row">
+        <input type="submit" class="btn" value="Submit Review" />
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>W05 • Product Review • Dylan Cleghorn</p>
+    </div>
+  </footer>
+
+  <script src="scripts/form.js" defer></script>
+</body>
+
+</html>
