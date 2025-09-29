@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product Review Form</title>
+  <meta name="description" content="WDD 131 — A product review form that submits to a confirmation page.">
+  <meta name="author" content="Dylan Cleghorn">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/form.css" />
+  <link rel="stylesheet" href="styles/form.css">
 </head>
 
 <body>
@@ -31,19 +33,19 @@
       <fieldset class="form-row">
         <legend>Overall Rating <span aria-hidden="true" class="req">*</span></legend>
         <div class="star-rating" role="radiogroup" aria-label="Overall rating from 1 to 5">
-          <input type="radio" name="rating" id="star-a" value="5" required />
+          <input type="radio" name="rating" id="star-a" value="5" required>
           <label for="star-a" title="5 stars"></label>
 
-          <input type="radio" name="rating" id="star-b" value="4" />
+          <input type="radio" name="rating" id="star-b" value="4">
           <label for="star-b" title="4 stars"></label>
 
-          <input type="radio" name="rating" id="star-c" value="3" />
+          <input type="radio" name="rating" id="star-c" value="3">
           <label for="star-c" title="3 stars"></label>
 
-          <input type="radio" name="rating" id="star-d" value="2" />
+          <input type="radio" name="rating" id="star-d" value="2">
           <label for="star-d" title="2 stars"></label>
 
-          <input type="radio" name="rating" id="star-e" value="1" />
+          <input type="radio" name="rating" id="star-e" value="1">
           <label for="star-e" title="1 star"></label>
         </div>
         <small class="hint">Click a star to select your rating.</small>
@@ -51,7 +53,7 @@
 
       <div class="form-row">
         <label for="installed">Date of Installation <span aria-hidden="true" class="req">*</span></label>
-        <input type="date" id="installed" name="installed" required />
+        <input type="date" id="installed" name="installed" required>
       </div>
 
       <fieldset class="form-row">
@@ -88,11 +90,11 @@
 
       <div class="form-row">
         <label for="username">Your Name</label>
-        <input type="text" id="username" name="username" placeholder="Optional" />
+        <input type="text" id="username" name="username" placeholder="Optional">
       </div>
 
       <div class="form-row">
-        <input type="submit" class="btn" value="Submit Review" />
+        <input type="submit" class="btn" value="Submit">
       </div>
     </form>
   </main>
