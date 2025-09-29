@@ -23,11 +23,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("reviewForm");
   if (form) {
     form.addEventListener("submit", (e) => {
+      let valid = true;
+      let messages = [];
+
+      // Product select
+      const productSelect = form.querySelector('#product');
+      if (!productSelect.value) {
+        valid = false;
+        messages.push("Please select a product.");
+      }
+
+      // Rating (stars)
       const ratingChecked = !!form.querySelector('input[name="rating"]:checked');
       if (!ratingChecked) {
-        alert("Please select an overall rating.");
+        valid = false;
+        messages.push("Please select an overall rating.");
+      }
+
+      // Installation date
+      const installDate = form.querySelector('#installed');
+      if (!installDate.value) {
+        valid = false;
+        messages.push("Please enter the installation date.");
+      }
+
+      // If any failed, stop submit and show alerts
+      if (!valid) {
+        alert(messages.join("\n"));
         e.preventDefault();
       }
     });
   }
+
 });

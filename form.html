@@ -14,7 +14,6 @@
   <header class="site-header">
     <div class="container">
       <h1>Product Review</h1>
-      <p class="subtitle">Share your experience to help others.</p>
     </div>
   </header>
 
@@ -22,9 +21,11 @@
     <form id="reviewForm" action="review.html" method="get" novalidate>
       <div class="form-row">
         <label for="product">Product Name <span aria-hidden="true" class="req">*</span></label>
-        <select id="product" name="product" required>
-          <option value="" disabled selected>Select a Product ...</option>
-        </select>
+        <div class="select-wrapper">
+          <select id="product" name="product" required>
+            <option value="" disabled selected>Select a Product ...</option>
+          </select>
+        </div>
       </div>
 
       <fieldset class="form-row">
